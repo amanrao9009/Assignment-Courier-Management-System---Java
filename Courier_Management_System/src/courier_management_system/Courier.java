@@ -9,7 +9,7 @@ import java.util.Date;
  * @author ASUS
  */
 public class Courier {
-
+    public Courier(){};
     public Courier(int courierID1, String senderName1, String senderAddress1, String receiverName1, String receiverAddress1, double weight1, String status1, int trackingNumber1, Date deliveryDate1, int userId1) {
     }
     
@@ -25,13 +25,25 @@ public class Courier {
     public int userId;
 
     public Courier getCourierDetails() {
-        return this;
+        Courier detailsCopy = new Courier();
+        detailsCopy.courierID = this.courierID;
+        detailsCopy.senderName = this.senderName;
+        detailsCopy.senderAddress = this.senderAddress;
+        detailsCopy.receiverName = this.receiverName;
+        detailsCopy.receiverAddress = this.receiverAddress;
+        detailsCopy.weight = this.weight;
+        detailsCopy.status = this.status;
+        detailsCopy.trackingNumber = this.trackingNumber;
+        detailsCopy.deliveryDate = this.deliveryDate;
+        detailsCopy.userId = this.userId;
+
+        return detailsCopy;
     }
 
     public void setCourierDetails(int courierID, String senderName, String senderAddress,
         String receiverName, String receiverAddress, double weight, String status,
         String trackingNumber, Date deliveryDate, int userId) {
-        // Assuming that you want to update all details at once
+
         this.courierID = courierID;
         this.senderName = senderName;
         this.senderAddress = senderAddress;

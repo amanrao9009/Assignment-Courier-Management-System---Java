@@ -15,8 +15,8 @@ import java.time.*;
 public  class ICourierUserService {
     
      Scanner scanner = new Scanner(System.in);
- // Static variable to generate unique tracking numbers
-    private static int nextTrackingNumber = 1;
+
+     private static int nextTrackingNumber = 1;
 
     public Courier placeOrder() {
         int trackingNumber = generateTrackingNumber();
@@ -37,17 +37,14 @@ public  class ICourierUserService {
         System.out.print("Enter weight: ");
         double weight = scanner.nextDouble();
 
-        // Consume the newline character left by nextDouble() before calling nextLine()
         scanner.nextLine();
 
         System.out.print("Enter status: ");
         String status = scanner.nextLine();
 
-        // Assuming userId is an integer
         System.out.print("Enter userId: ");
         int userId = scanner.nextInt();
 
-        // Assuming deliveryDate is a Date object
         System.out.print("Enter delivery date (yyyy-MM-dd): ");
         String deliveryDateString = scanner.next();
          LocalDate dummyLocalDate = LocalDate.of(2000, 1, 1);
@@ -64,8 +61,7 @@ public  class ICourierUserService {
 //        
         
          
-        // Implement common logic for placing an order, such as validation
-        // Additional logic can be delegated to concrete implementations
+
         
        Courier courier = new Courier( 
          courierID,
@@ -77,24 +73,18 @@ public  class ICourierUserService {
         status,
         trackingNumber,
         deliveryDate,
-        userId);
+        userId);     
        
-       System.out.print(courier.getCourierDetails().senderAddress);
-        
         
         
         return courier;
     }
 
 //    public String getOrderStatus(String trackingNumber) {
-//        // Implement common logic for getting order status
-//        // Additional logic can be delegated to concrete implementations
 //        return specificGetOrderStatusLogic(trackingNumber);
 //    }
 //
 //    public boolean cancelOrder(String trackingNumber) {
-//        // Implement common logic for canceling an order
-//        // Additional logic can be delegated to concrete implementations
 //        return specificCancelOrderLogic(trackingNumber);
 //    }
 
@@ -102,12 +92,6 @@ public  class ICourierUserService {
         return nextTrackingNumber++;
     }
 
-    // Abstract methods to be implemented by concrete subclasses
-//    protected abstract void specificPlaceOrderLogic(Courier courierObj);
-//
-//    protected abstract String specificGetOrderStatusLogic(String trackingNumber);
-//
-//    protected abstract boolean specificCancelOrderLogic(String trackingNumber);    
 
   
 }

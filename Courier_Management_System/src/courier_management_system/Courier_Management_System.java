@@ -23,7 +23,7 @@ public class Courier_Management_System {
     
 
     public static void main(String[] args) {
-        // TODO code application logic here
+      
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -41,10 +41,10 @@ public class Courier_Management_System {
             rs = stmt.executeQuery("SELECT Status FROM `courie_management`.`courier`");
           
             
-            while (rs.next()) {               // Position the cursor                 3 
-             empNo = rs.getString(1);             // Retrieve only the first column value
+            while (rs.next()) {              
+             empNo = rs.getString(1);             
              System.out.println("Employee number = " + empNo);
-                                  // Print the column value
+                                  
             
 
             }
@@ -62,8 +62,8 @@ public class Courier_Management_System {
         ICourierUserService ic = new ICourierUserService();
         
         
-       ic.placeOrder();
-        
+       Courier newRow = ic.placeOrder();
+        System.out.println(newRow.senderName);
     }
     
 }
